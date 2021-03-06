@@ -72,10 +72,10 @@ for (a,b), df in A.groupby([c[0],c[1]]):
         ('Participantes Externos'               , c[2:3]+c[25:26] ),        
         ('Egressos'                             , c[2:3]+c[27:29]+c[49:50]),        
         ('Disciplinas e Turmas'                 , c[2:3]+c[30:31]+c[32:33] ),
-        ('Produção Artística-Cultural'          , c[2:3]+c[37:40] ),
-        ('Produção Bibliográfica'               , c[2:3]+c[40:43] ),
-        ('Produção Técnica'                     , c[2:3]+c[43:46] ),
-        ('Trabalhos de Conclusão'               , c[2:3]+c[46:49] ),
+        ('Produção Artística-Cultural'          , c[2:3]+c[38:41] ),
+        ('Produção Bibliográfica'               , c[2:3]+c[41:44] ),
+        ('Produção Técnica'                     , c[2:3]+c[44:47] ),
+        ('Trabalhos de Conclusão'               , c[2:3]+c[47:49] ),
         ]   
     
     
