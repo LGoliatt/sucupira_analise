@@ -71,7 +71,9 @@ for (a,b), df in A.groupby([c[0],c[1]]):
         ('Docentes'                             , c[2:3]+c[21:25] ),        
         ('Participantes Externos'               , c[2:3]+c[25:26] ),        
         ('Egressos'                             , c[2:3]+c[27:29]+c[49:50]),        
-        ('Disciplinas e Turmas'                 , c[2:3]+c[30:31]+c[32:33] ),
+        ('Egressos Doutorado'                   , c[2:3]+c[27:28] ),        
+        ('Egressos Mestado  '                   , c[2:3]+c[28:29] ),        
+        ('Disciplinas e Turmas'                 , c[2:3]+c[30:31] ),
         ('Produção Artística-Cultural'          , c[2:3]+c[38:41] ),
         ('Produção Bibliográfica'               , c[2:3]+c[41:44] ),
         ('Produção Técnica'                     , c[2:3]+c[44:47] ),
@@ -86,10 +88,10 @@ for (a,b), df in A.groupby([c[0],c[1]]):
         n_colors = aux.shape[1]-1
         palette=sns.color_palette("tab10")[:n_colors]
         aux=aux.melt(id_vars=c[2])
-        
+        #%%
         pl.figure()
         a4_dims = (4, 6)
-        fig, ax = pl.subplots(figsize=a4_dims)
+        fig, ax = pl.subplots()#figsize=a4_dims)
         for (label, item), color in zip(aux.groupby('variable'),palette):
             g = sns.lineplot(x=c[2], y='value', hue='variable', style='variable', 
                           markers=True, dashes=False, 
@@ -102,7 +104,8 @@ for (a,b), df in A.groupby([c[0],c[1]]):
            
         g.set_ylabel(''); g.grid(alpha=0.4, ls='-.')
         g.set_title(key)
-        g.legend(bbox_to_anchor=(1.01,0.8))
+        #g.legend(bbox_to_anchor=(1.01,0.8))
+        g.legend(bbox_to_anchor=(1.,-0.2))
         pl.savefig(dir_name+'/'+key.replace(' ','_')+'.png', dpi=300, bbox_inches='tight')
         pl.show()
      
