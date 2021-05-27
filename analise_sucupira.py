@@ -79,7 +79,7 @@ for (a,b), df in A.groupby([c[0],c[1]]):
         ('Produção Técnica'                     , c[2:3]+c[44:47] ),
         ('Trabalhos de Conclusão'               , c[2:3]+c[47:49] ),
         ]   
-    
+     
     
     for key, key_col in keys:
         aux = df[key_col]
